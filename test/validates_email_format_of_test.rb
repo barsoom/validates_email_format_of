@@ -147,6 +147,10 @@ class ValidatesEmailFormatOfTest < TEST_CASE
     assert_nil ValidatesEmailFormatOf::validate_email_format('012345@789', :with => /[0-9]+\@[0-9]+/)
   end
 
+  def test_should_not_allow_surrounding_whitespace
+    assert_invalid(" foo@example.com ")
+  end
+
   def test_should_respect_validate_on_option
     p = create_person(:email => @valid_email)
     save_passes(p)
@@ -203,8 +207,8 @@ class ValidatesEmailFormatOfTest < TEST_CASE
   end
 
   def test_frozen_string
-    assert_valid("  #{@valid_email}  ".freeze)
-    assert_invalid("  #{@invalid_email}  ".freeze)
+    assert_valid("#{@valid_email}".freeze)
+    assert_invalid("#{@invalid_email}".freeze)
   end
 
   protected
