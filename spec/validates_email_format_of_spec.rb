@@ -120,7 +120,10 @@ describe ValidatesEmailFormatOf do
       'Abc\@def+@example.com',
       'Joe.\\Blow@example.com',
       # Unbalanced quoted characters
-      %!"example\\\\""example.com!
+      %!"example\\\\""example.com!,
+      # Does not allow surrounding space characters
+      ' invalid@example.com',
+      %!\tinvalid@example.com!,
     ].each do |address|
       describe address do
         it { should have_errors_on_email.because("does not appear to be a valid e-mail address") }
