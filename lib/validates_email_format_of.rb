@@ -49,7 +49,7 @@ module ValidatesEmailFormatOf
                           }
       opts = options.merge(default_options) {|key, old, new| old}  # merge the default options into the specified options, retaining all specified options
 
-      email = email.strip if email
+      # email = email.strip if email # Removed in barsoom/validates_email_format_of
 
       begin
         domain, local = email.reverse.split('@', 2)
