@@ -7,7 +7,7 @@ task :default => [:clean_log, :test]
 
 desc 'Remove the old log file'
 task :clean_log do
-  "rm -f #{File.dirname(__FILE__)}/test/debug.log" if File.exists?(File.dirname(__FILE__) + '/test/debug.log')
+  "rm -f #{File.dirname(__FILE__)}/test/debug.log" if File.exist?(File.dirname(__FILE__) + '/test/debug.log')
 end
 
 desc 'Test the validates_email_format_of plugin.'
