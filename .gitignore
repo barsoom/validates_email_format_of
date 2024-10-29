@@ -5,3 +5,6 @@ Gemfile.lock
 *.gem
 *.sqlite3
 *.swp
+.ruby-version
+gemfiles/.bundle
+gemfiles/*.gemfile.lock
