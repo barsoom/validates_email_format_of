@@ -8,3 +8,4 @@ Gemfile.lock
 .ruby-version
 gemfiles/.bundle
 gemfiles/*.gemfile.lock
+tmp
