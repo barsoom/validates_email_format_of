@@ -16,6 +16,7 @@ describe ValidatesEmailFormatOf do
       end
       attr_reader :email
       include ActiveModel::Validations
+
       validates_email_format_of :email, example.example_group_instance.options
 
       def self.model_name
@@ -383,6 +384,7 @@ describe ValidatesEmailFormatOf do
         end
         attr_reader :email
         include ActiveModel::Validations
+
         validates :email, email_format: example.example_group_instance.options
 
         def self.model_name
