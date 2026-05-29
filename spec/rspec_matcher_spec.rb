@@ -4,6 +4,7 @@ require "validates_email_format_of/rspec_matcher"
 class Person
   attr_accessor :email_address
   include ::ActiveModel::Validations
+
   validates_email_format_of :email_address
 end
 

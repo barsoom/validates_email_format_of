@@ -37,7 +37,7 @@ module ValidatesEmailFormatOf
   # ccontent        =   ctext / quoted-pair / comment
   # comment         =   "(" *([FWS] ccontent) [FWS] ")"
   # CFWS            =   (1*([FWS] comment) [FWS]) / FWS
-  CTEXT = /\A[#{Regexp.escape([33..39, 42..91, 93..126].map { |ascii_range| ascii_range.map(&:chr) }.flatten.join)}\s]/i
+  CTEXT = /\A[#{Regexp.escape([33..39, 42..91, 93..126].map { |ascii_range| ascii_range.map(&:chr) }.join)}\s]/i
 
   # https://www.rfc-editor.org/rfc/rfc5322#section-3.2.4
   #
@@ -55,7 +55,7 @@ module ValidatesEmailFormatOf
   # quoted-string   =   [CFWS]
   #                     DQUOTE *([FWS] qcontent) [FWS] DQUOTE
   #                     [CFWS]
-  QTEXT = /\A[#{Regexp.escape([33..33, 35..91, 93..126].map { |ascii_range| ascii_range.map(&:chr) }.flatten.join)}\s]/i
+  QTEXT = /\A[#{Regexp.escape([33..33, 35..91, 93..126].map { |ascii_range| ascii_range.map(&:chr) }.join)}\s]/i
 
   IP_OCTET = /\A[0-9]+\Z/
 
