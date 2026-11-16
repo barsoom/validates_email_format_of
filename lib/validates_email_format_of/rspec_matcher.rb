@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "validates_email_format_of"
 
 RSpec::Matchers.define :validate_email_format_of do |attribute|
