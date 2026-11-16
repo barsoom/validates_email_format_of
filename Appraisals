@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # run `bundle exec appraisal install` after making changes here
 appraise "rails-8.1" do
   gem "rails", "~> 8.1"
